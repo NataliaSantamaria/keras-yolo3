@@ -1,3 +1,11 @@
+# Custom
+input/
+*.h5
+*.db
+*.yml
+*.txt
+*.weights
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
