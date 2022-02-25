@@ -215,25 +215,16 @@ class YOLO(object):
     def close_session(self):
         self.sess.close()
 
-def detect_video(yolo, output_path=""): #He quitado el parametro video_path
+def detect_video(yolo, video_path, output_path=""):
     import cv2
-    #vid = cv2.VideoCapture(video_path)
-    #if not vid.isOpened():
-        #raise IOError("Couldn't open webcam or video")
+    vid = cv2.VideoCapture(video_path)
+    if not vid.isOpened():
+        raise IOError("Couldn't open webcam or video")
 
-    cam = cv2.VideoCapture()
-    cam.open("http://pdt:cuenca@138.4.32.13/mjpg/video.mjpg")  # user:pass is necessary to work
-    if cam.isOpened():
-        print("Camera connection established.")
-    else:
-        print("Failed to connect to the camera.")
-        exit(-1)
-
-    video_FourCC = int(cam.get(cv2.CAP_PROP_FOURCC))
-    video_fps = cam.get(cv2.CAP_PROP_FPS)
-    video_size = (int(cam.get(cv2.CAP_PROP_FRAME_WIDTH)),
-                int(cam.get(cv2.CAP_PROP_FRAME_HEIGHT)))
-    #aqui cambio las dimensiones de video_size?
+    video_FourCC = int(vid.get(cv2.CAP_PROP_FOURCC))
+    video_fps = vid.get(cv2.CAP_PROP_FPS)
+    video_size = (int(vid.get(cv2.CAP_PROP_FRAME_WIDTH)),
+                int(vid.get(cv2.CAP_PROP_FRAME_HEIGHT)))
 
     isOutput = True if output_path != "" else False
     if isOutput:
@@ -245,8 +236,7 @@ def detect_video(yolo, output_path=""): #He quitado el parametro video_path
     prev_time = timer()
 
     while True:
-        ret, frame = cam.read()
-        frame = cv2.resize(frame, dsize=(800,600))
+        ret, frame = vid.read()
         if not ret:
             continue
 
@@ -274,9 +264,6 @@ def detect_video(yolo, output_path=""): #He quitado el parametro video_path
 
 def detect_stream(yolo, output_path=""):
     import cv2
-    # vid = cv2.VideoCapture(video_path)
-    # if not vid.isOpened():
-    # raise IOError("Couldn't open webcam or video")
 
     cam = cv2.VideoCapture()
     cam.open("http://pdt:cuenca@138.4.32.13/mjpg/video.mjpg")  # user:pass is necessary to work
@@ -290,7 +277,6 @@ def detect_stream(yolo, output_path=""):
     video_fps = cam.get(cv2.CAP_PROP_FPS)
     video_size = (int(cam.get(cv2.CAP_PROP_FRAME_WIDTH)),
                   int(cam.get(cv2.CAP_PROP_FRAME_HEIGHT)))
-    # aqui cambio las dimensiones de video_size?
 
     isOutput = True if output_path != "" else False
     if isOutput:

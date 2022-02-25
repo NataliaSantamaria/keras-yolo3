@@ -5,6 +5,9 @@ input/
 *.yml
 *.txt
 *.weights
+logs/
+output_28/
+espacios_blanco.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

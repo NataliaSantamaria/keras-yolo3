@@ -146,7 +146,7 @@ num_train = len(lines) - num_val
 def objective(trial):
 
     #batch_size no se optimiza, encontramos el valor maximo y trabjamos con el
-    hw = trial.suggest_int("hw",20,40,step=4,log=False)
+    hw = trial.suggest_int("hw",35,45,step=1,log=False)
 
     trial_folder = "modelo_prueba_" + "trial{0:06d}".format(trial.number)
     path = os.path.join(log_dir, trial_folder)
@@ -214,7 +214,7 @@ def objective(trial):
 study_name = "third-study"
 storage_name = "sqlite:///third-study.db"
 
-search_space = {"hw": [20, 24, 28, 32, 36, 40]}
+search_space = {"hw": [35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45]}
 
 study = optuna.create_study(study_name=study_name, storage=storage_name, load_if_exists=True, direction='minimize', sampler=optuna.samplers.GridSampler(search_space))
 study.optimize(objective, n_trials=20)
