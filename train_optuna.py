@@ -117,7 +117,7 @@ def data_generator_wrapper(annotation_lines, batch_size, input_shape, anchors, n
     return data_generator(annotation_lines, batch_size, input_shape, anchors, num_classes, hw)
 
 #def _main():
-annotation_path = 'train.txt'
+annotation_path = 'train_ruta_disco.txt'
 log_dir = 'logs/030/'
 classes_path = 'model_data/gti_classes.txt'
 anchors_path = 'model_data/yolo_anchors.txt'
