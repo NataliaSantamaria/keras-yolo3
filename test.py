@@ -44,8 +44,8 @@ if args.set_class_iou is not None:
 # make sure that the cwd() is the location of the python script (so that every path makes sense)
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
-GT_PATH = os.path.join(os.getcwd(), 'input', 'ground-truth')
-DR_PATH = os.path.join(os.getcwd(), 'input', 'detection-results-trial3')
+GT_PATH = os.path.join(os.getcwd(), 'input', 'ground-truth-38')
+DR_PATH = os.path.join(os.getcwd(), 'input', 'detection-results-trial10-hw38')
 # if there are no images then no animation can be shown
 IMG_PATH = os.path.join(os.getcwd(), 'input', 'images-optional')
 if os.path.exists(IMG_PATH):

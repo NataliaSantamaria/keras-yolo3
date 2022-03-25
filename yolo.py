@@ -20,7 +20,7 @@ from keras.utils import multi_gpu_model
 
 class YOLO(object):
     _defaults = {
-        "model_path": 'logs/020/modelo_prueba_trial000003/trained_weights_final.h5',
+        "model_path": 'logs/030/modelo_prueba_trial000005/trained_weights_final.h5',
         "anchors_path": 'model_data/yolo_anchors.txt',
         "classes_path": 'model_data/gti_classes.txt',
         "score" : 0.3,
@@ -289,7 +289,7 @@ def detect_stream(yolo, output_path=""):
 
     while True:
         ret, frame = cam.read()
-        frame = cv2.resize(frame, dsize=(800, 600))
+        #frame = cv2.resize(frame, dsize=(800, 600))
         if not ret:
             continue
 

@@ -9,8 +9,8 @@
 #         x = lines[i].split()
 #         print(x)
 
-fichero = open('/home/nsp/Desktop/TFM_Natalia/PIROPO/Test/annotations_24/annotations_omni3A_test2_24.txt', 'r')
-f = open('/home/nsp/Desktop/TFM_Natalia/PIROPO/Test/annotations_24/annotations_omni3A_test2_24_b.txt', 'w')
+fichero = open('/media/nsp/62D49B40D49B157F/u/nsp/TFM_Natalia/PIROPO/Test/annotations_45/annotations_omni3A_test2.txt', 'r')
+f = open('/media/nsp/62D49B40D49B157F/u/nsp/TFM_Natalia/PIROPO/Test/annotations_45/annotations_omni3A_test2_b.txt', 'w')
 for linea in fichero:
     x = " ".join(linea.split())
     f.write(x + '\n')

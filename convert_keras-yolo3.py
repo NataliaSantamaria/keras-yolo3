@@ -21,7 +21,7 @@ ap = argparse.ArgumentParser()
 
 ap.add_argument("-o", "--output_path",
                 required=False,
-                default='/home/nsp/Desktop/TFM_Natalia/keras-yolo3-master/input/ground-truth-32-sintest2',
+                default='/media/nsp/62D49B40D49B157F/u/nsp/TFM_Natalia/keras-yolo3/input/ground-truth-35',
                 type=str,
                 help="The dataset root path location.")
 ap.add_argument("-r", "--gen_recursive",

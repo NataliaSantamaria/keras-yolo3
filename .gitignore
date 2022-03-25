@@ -6,8 +6,8 @@ input/
 *.txt
 *.weights
 logs/
-output_28/
 espacios_blanco.py
+test/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

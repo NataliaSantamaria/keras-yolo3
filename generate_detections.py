@@ -280,7 +280,7 @@ if __name__ == '__main__':
 
     # Required for multiple detections (single_image=False)
     parser.add_argument(
-        "--list_images", nargs='?', type=str, default="/home/nsp/Desktop/TFM_Natalia/PIROPO/Test/lista_img_test.txt",
+        "--list_images", nargs='?', type=str, default="/media/nsp/62D49B40D49B157F/u/nsp/TFM_Natalia/PIROPO/Test/lista_img_test.txt",
         help="Path to txt file listing the path of each of the images"
     )
 
@@ -291,7 +291,7 @@ if __name__ == '__main__':
     )
 
     parser.add_argument(
-        "--output_dir", nargs='?', type=str, default="/home/nsp/Desktop/TFM_Natalia/keras-yolo3-master/input/detection-results-trial0",
+        "--output_dir", nargs='?', type=str, default="/media/nsp/62D49B40D49B157F/u/nsp/TFM_Natalia/keras-yolo3/input/detection-results-trial10-hw38",
         help="Path where a set of txt files (one per image) will be generated"
     )
 
